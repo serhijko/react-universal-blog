@@ -24,6 +24,7 @@ export function getStore(callback){
 
     let footer_text = _.find(metafields, { key: 'footer-text' })
     globals.text.footer_text = footer_text.value
+
     let site_title = _.find(metafields, { key: 'site-title' })
     globals.text.site_title = site_title.value
 
@@ -90,9 +91,6 @@ export function getPageData(page_slug, post_slug){
     page.headline = headline.value
 
     const subheadline = _.find(metafields, { key: 'subheadline' })
-    page.headline = headline.value
-
-    const subheadline = _.find(metafields, { key: 'subheadline' })
     page.subheadline = subheadline.value
   }
 
@@ -108,7 +106,6 @@ export function getPageData(page_slug, post_slug){
       page.title = work_item.title
     }
   }
-
   AppStore.data.page = page
   AppStore.emitChange()
 }
